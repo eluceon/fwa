@@ -1,0 +1,67 @@
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+html table {
+    float: left;
+}
+
+.auth {
+    margin-right: 30px;
+}
+
+th, td {
+    padding: 3px 5px;
+}
+
+p {
+    font-weight: bold;
+}
+
+.about {
+    height: 305px;
+}
+
+.avatar {
+    text-align: center;
+    width: 250px;
+    float: left;
+    margin-right: 50px;
+}
+
+.avatar input[type="file"] {
+    display: none;
+}
+
+.avatar img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 7%;
+}
+
+.avatar input[type="submit"] {
+    border: none;
+}
+
+.avatar label {
+    margin-right: 10px;
+}
+
+.avatar label, .avatar input[type="submit"] {
+    background-color: #00babc;
+    color: #ffffff;
+    height: 31px;
+    padding: 7px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.avatar label:hover, .avatar input[type="submit"]:hover {
+    background-color: #008889;
+}
+
+.avatar form {
+    margin-top: 35px;
+}

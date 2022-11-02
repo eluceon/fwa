@@ -1,0 +1,31 @@
+CREATE TABLE IF NOT EXISTS users (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(50) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS authentications
+(
+    id      BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    ip      VARCHAR(48) NOT NULL,
+    date    timestamp DEFAULT CURRENT_TIMESTAMP,
+    user_id BIGINT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS images
+(
+    id      BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name    VARCHAR(255) DEFAULT 'avatar',
+    path    VARCHAR(255) NOT NULL,
+    size    INT DEFAULT 0,
+    mime    TEXT,
+    date    timestamp DEFAULT CURRENT_TIMESTAMP,
+    user_id BIGINT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+);
+
+CREATE INDEX ON images (user_id);
